@@ -1,0 +1,591 @@
+@import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: "Parkinsans", sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+h1 {
+    font-size: 3em;
+}
+
+ h1 {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+header a:hover {
+    color: #ffffff;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Header */
+header {
+    background-color: #47e8dd;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    animation: fadeInDown 0.5s ease-in-out;
+}
+
+header .logo img {
+    max-width: 140px;
+    padding: 5px;
+}
+
+/* Nav */
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    gap: 20px;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.6em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::before {
+    width: 100%;
+}
+
+ul li a.active {
+    color: #ffffff;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+nav ul li a.active::before {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger div {
+    width: 40px;
+    height: 5px;
+    border-radius: 3px;
+    background-color: #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+#nav-menu {
+    display: flex;
+    gap: 20px;
+}
+
+#nav-menu ul {
+    display: flex;
+}
+
+
+/* Hero */
+.hero {
+    background-color: #47E8DD;
+    color: white;
+    padding: 80px 20px;
+    height: 600px;
+    text-align: center;
+    background-image: linear-gradient(to right, rgba(71, 232, 221, 0.8), rgba(0, 0, 0, 0.6)), url('img/ambulancias3.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: none;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 15px;
+    font-weight: 800;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    font-size: 1.5em;
+    margin-bottom: 25px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Botões */
+/* .btn-primary {
+    background-color: #333;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 1.1em;
+    border-radius: 5px;
+    transition: all 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: #555;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3px);
+} */
+
+/* Seções */
+section {
+    margin-bottom: 40px;
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease-out;
+}
+
+.contact {
+    margin-bottom: 0;
+    padding: 15px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.contact img {
+    width: 24px;
+    align-items: center;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-bottom: -8px;
+}
+.contact p {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+}
+.contact p strong {
+    margin-right: 1ch;
+}
+
+.servicos, .cursos, .courses, .contact, .inscription-form {
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 40px 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.servicos, .cursos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.servicos h1, .cursos h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 700;
+    position: relative;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'Parkinsans', sans-serif;
+}
+
+.servico, .curso {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+.curso ul {
+    text-align: left;
+}
+
+.curso h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #47E8DD;
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+.curso-img {
+    width: 45px;
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+    z-index: 1;
+}
+
+h2 {
+    font-size: 2.1em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 700;
+    position: relative;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'Parkinsans', sans-serif;
+}
+
+h2::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #47E8DD;
+    animation: slideIn 0.6s ease-in-out;
+}
+
+h3 {
+    color: #47E8DD;
+    font-size: 1.8em;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo dos itens de serviço e cursos */
+.service-item  {
+    background-color: #f9f9f9;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    padding: 20px 50px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-item p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #555;
+}
+
+.service-item img {
+    max-width: 192px;
+    border-radius: 8px;
+}
+
+.service-item li {
+    font-size: 1.2em;
+
+}
+
+/* Form */
+.inscription-form form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.inscription-form label::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px dashed black;
+    margin-left: 10px;
+}
+
+.inscription-form label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.inscription-form input,
+.inscription-form select {
+    padding: 12px;
+    margin: 0 10px 10px 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.inscription-form input:focus,
+.inscription-form select:focus {
+    border-color: #47E8DD;
+    outline: none;
+}
+
+.inscription-form .submit-button {
+    background-color: #47E8DD;
+    margin-top: 20px;
+    grid-column: span 2;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 1.2em;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.inscription-form .submit-button:hover {
+    background-color: #3bb9b7;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 10px;
+    font-size: 0.9em;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Responsividade */
+
+
+@media (max-width: 768px) {
+    .contact p {
+        font-size: 11px;
+    }
+    h2{ 
+        font-size: 1.7em;
+    }
+    footer{
+        font-size: 0.6em;
+    }
+    .contact img {
+        width: 16px;
+        margin-bottom: -1px;
+    }
+}               
+
+
+@media (max-width: 1052px) {
+    /* .hero {
+    background-image: linear-gradient(to right, rgba(71, 232, 221, 0.8), rgba(0, 0, 0, 0.6)), url('img/portal-cianorte.jpg');
+    } */
+    .hero h1 {
+        font-size: 2.1em;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+    }
+
+    .servicos, .cursos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .servico, .curso {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .inscription-form form {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul {
+        display: block;
+        text-align: center;
+        gap: 10px;
+    }
+
+    header {
+        padding: 10px 20px;
+    }
+
+    .inscription-form label::after {
+        display: none;
+    }
+
+    .inscription-form label {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 0;
+        font-size: 1em;
+    }
+
+    .inscription-form input,
+    .inscription-form select {
+        margin: 0 0 10px 0;
+    }
+
+    .inscription-form .submit-button {
+        grid-column: span 1;
+    }
+
+    .curso-img {
+        display: none;
+    }
+
+
+
+
+    #nav-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #47E8DDe6;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #nav-menu ul {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .hamburger {
+        display: flex;
+        z-index: 1001;
+        cursor: pointer;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .hamburger.active div:nth-child(1) {
+        transform: rotate(45deg);
+        position: relative;
+        top: 12px;
+    }
+
+    .hamburger.active div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active div:nth-child(3) {
+        transform: rotate(-45deg);
+        position: relative;
+        top: -12px;
+    }
+
+    #nav-menu.active {
+        transform: translateX(0);
+    }
+}
+
+
+/* Animações */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
